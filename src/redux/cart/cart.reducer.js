@@ -1,5 +1,5 @@
 import ActionsIndex from "../actions-index";
-import { addItemUtil } from "./cart.utils";
+import { addItemUtil, removeItemUtil, clearItemUtil } from "./cart.utils";
 
 const INITIAL_STATE = {
   hidden: true,
@@ -16,8 +16,17 @@ export default function cartReducer(state = INITIAL_STATE, action) {
     case ActionsIndex.cart.ADD_ITEM:
       return {
         ...state,
-        // cartItems: [...state.cartItems, action.payload],
         cartItems: addItemUtil(state.cartItems, action.payload)
+      };
+    case ActionsIndex.cart.REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: removeItemUtil(state.cartItems, action.payload)
+      };
+    case ActionsIndex.cart.CLEAR_ITEM:
+      return {
+        ...state,
+        cartItems: clearItemUtil(state.cartItems, action.payload)
       };
     default:
       return state;

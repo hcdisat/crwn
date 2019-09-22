@@ -14,3 +14,28 @@ export function addItemUtil(cartItems, itemToAdd) {
 
   return [...cartItems, { ...itemToAdd, quantity: 1 }];
 }
+
+/**
+ *
+ * @param {Array<CartItem>} cartItems
+ * @param {Object<Cart>} itemToRemove
+ */
+export function removeItemUtil(cartItems, itemToRemove) {
+  if (itemToRemove.quantity === 1) {
+    return clearItemUtil(cartItems, itemToRemove);
+  }
+
+  return cartItems.map(item =>
+    item.id === itemToRemove.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+}
+
+/**
+ *
+ * @param {Array<CartItem>} cartItems
+ * @param {Object<Cart>} itemToRemove
+ */
+export const clearItemUtil = (cartItems, itemToRemove) =>
+  cartItems.filter(item => item.id !== itemToRemove.id);

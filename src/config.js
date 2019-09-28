@@ -7,6 +7,10 @@ const config = {
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_FIREBASE_APP_ID
+  },
+  stripe: {
+    publishablekey: process.env.REACT_APP_STRIPE_PUBLISHABLE_kEY,
+    secretkey: process.env.REACT_APP_STRIPE_SECRET_KEY
   }
 };
 

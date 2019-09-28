@@ -3,6 +3,8 @@ import "firebase/firebase-firestore";
 import "firebase/auth";
 import config from "../config";
 
+console.log("SUPERMAN", config.firebase);
+
 firebase.initializeApp(config.firebase);
 
 const auth = firebase.auth();

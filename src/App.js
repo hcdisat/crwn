@@ -13,6 +13,8 @@ import auth from "./services/auth-service";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
+console.log("SUPERMAN", process.env.REACT_APP_FIREBASE_API_KEY);
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
 

@@ -3,7 +3,7 @@ import "firebase/firebase-firestore";
 import "firebase/auth";
 import config from "../config";
 
-console.log("SUPERMAN", config.firebase);
+console.log("SUPERMAN", process.env);
 
 firebase.initializeApp(config.firebase);
 
